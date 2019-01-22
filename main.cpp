@@ -16,7 +16,7 @@ int main() {
 //    library.insertion_sort(array, 6);
 //    library.show_array(array, 6);
 //    library.selection_sort(array, 6);
-    library.merge_sort(array, 0, 7);
+    library.merge_sort(array, 1, 6);
     library.show_array(array, 8);
 
     return 0;

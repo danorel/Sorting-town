@@ -32,7 +32,7 @@ void Library::selection_sort(int *integer_array, int size) {
 
 void Library::merge_sort(int *integer_array, int start_index, int end_index){
     if(end_index > start_index){
-        int middle_index = ((end_index - start_index) / 2);
+        int middle_index = ((end_index + start_index) / 2);
         merge_sort(integer_array, start_index, middle_index);
         merge_sort(integer_array, middle_index + 1, end_index);
         merge(integer_array, start_index, middle_index, end_index);
@@ -44,11 +44,11 @@ void Library::merge(int *integer_array, int start_index, int middle_index, int e
     int *ssub_integer_array = new int[end_index - middle_index];
 
     for(int index = 0; index < middle_index - start_index + 1; index++){
-        fsub_integer_array[index] = integer_array[index];
+        fsub_integer_array[index] = integer_array[start_index + index];
     }
 
     for(int index = 0; index < end_index - middle_index; index++){
-        ssub_integer_array[index] = integer_array[end_index - middle_index + index];
+        ssub_integer_array[index] = integer_array[middle_index + 1 + index];
     }
 
     int f_iter = 0, s_iter = 0, iterator = start_index;
